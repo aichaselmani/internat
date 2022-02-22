@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		 <link rel="stylesheet" type="text/css" href="index.css" />
+		
+	</head>
+	<body>
+ 
+			<div class="login-box">
+			<h2>Login</h2>
+			<form action="#" th:action="@{/Index}"  th:object="${Admin}" method="post">
+				<div class="login-field">
+					<input type="text" th:field="*{user}" name="" required="" />
+					<label>Username</label>
+				</div>
+				<div class="login-field">
+					<input type="password" th:field ="*{passWord}" name="" required="" />
+					<label >Password</label>
+				</div>
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+ 
+		
+		 
+	</body>
+</html>

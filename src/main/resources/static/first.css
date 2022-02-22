@@ -1,0 +1,50 @@
+ 	  
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: turquoise;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: aquamarine;
+}
+.maz {
+	color: teal;
+	margin-right: 10%;
+   margin-left:30%; 
+ }
+.active {
+  color: turquoise;
+    background-color: black;
+}
+.az {
+  color: aqua;
+   
+}
+section
+{   
+    width: 80%;
+}
+.about1 {
+  padding: 30px;
+  text-align: center;
+  margin-right: 10%;
+   margin-left:10%; 
+   margin-top:5% ;
+  background-color: #474e5d;
+  color: white;
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>departement</title>
+ 	 <link rel="stylesheet" type="text/css" href="departement.css" />
+  </head>
+  <body>
+   
+     
+ <div class="container1">
+ 
+        <nav class="menu">
+            <ul class="main-menu">
+                <li class="active"><i class="fa fa-home"></i><a class="her" href="/adminRetour">retour</a></li>
+                <li class="with-submenu">
+                    <i class="fa fa-briefcase"></i>Chambre&nbsp;&nbsp;&nbsp;<i class="fa fa-caret-down"></i>
+                      <ul class="submenu">
+                        <li><a  href="#ajouterDep">vide</a></li>
+                        <li><a href="#ajouterEtage">semi vide</a></li>
+                        <li><a href="#ajouterChambre">remplie</a></li>
+                    </ul>
+                </li>
+                <li class="with-submenu">
+                    <i class="fa fa-briefcase"></i>etage&nbsp;<i class="fa fa-caret-down"></i>
+                    <ul class="submenu">
+                        <li>  <a href="#supprimerDep">vide</a></li>
+                        <li><a href="#supprimerEtage">semi vide</a></li>
+                        <li><a href="#supprimerChambre">remplie</a></li>
+                        <li><a href="#modifierChambre">résidans</a></li>
+                    </ul>
+                </li>
+                <li class="with-submenu">
+                    <i class="fa fa-briefcase"></i>department&nbsp;&nbsp;&nbsp;<i class="fa fa-caret-down"></i>
+                    <ul class="submenu">
+      
+                        <li><a href="#modifierDep">vide</a></li>
+                        <li><a  href="#modifierEtage">semi vide</a></li>
+                        <li><a href="#modifierChambre">remplie</a></li>
+                         <li><a href="#modifierChambre">résidans</a></li>
+                    </ul>
+                </li>
+                <li class="with-submenu">
+                    <i class="fa fa-briefcase"></i>rechercher<i class="fa fa-caret-down"></i>
+                   <ul class="submenu">
+                         <li><a href="#chercherDep">departement</a></li>
+                        <li><a  href="#chercherEtage">etage</a></li>
+                        <li><a href="#chercherChambre">chambre</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
+    </div>
+                <p  th:utext="${errorMessage}" style="color:red;font-style:italic;"></p>	 
+            <div class="container">
+<div class="popover" id="supprimerDep">
+ <div class = 'content'>
+  <a href="#" class="close"></a>
+   <div class = 'nav'>
+    <ul class = 'nav_list'>
+      
+      <div class = 'nav_list_item'>
+	  <form action="#" th:action="@{/supDep}"  th:object="${departement}" method="post">
+   <p>
+  <label>le numero de departement</label> : <input type="text"  th:field ="*{numDepartement}"  name="" required="" /><br/>
+     <button type="submit">Valider</button>
+    </p></form>
+      </div>
+    
+      
+	</ul>
+  </div>
+ </div>
+ </div>
+ </div> 
+ 	    <div class="container">
+ 
+    
+<div class="popover" id="ajouterDep">
+ <div class = 'content'>
+  <a href="#" class="close"></a>
+   <div class = 'nav'>
+    <ul class = 'nav_list'>
+      
+      <div class = 'nav_list_item'>
+	  <form action="#" th:action="@{/departement1}"  th:object="${departement}" method="post">
+   <p>
+ <label>le numero de departement</label> : <input type="text"  th:field ="*{numDepartement}"  name="" required="" /><br/>
+     <label>le nombre de ses étages</label> : <input type="number"  th:field ="*{nombreEtage}" name="" required="" />
+   <button type="submit">Valider</button>
+    </p></form>
+      </div>
+    
+      
+	</ul>
+  </div>
+ </div>
+ </div>
+ </div>
+ 	    <div class="container">
+ 
+    
+<div class="popover" id="modifierDep">
+ <div class = 'content'>
+  <a href="#" class="close"></a>
+   <div class = 'nav'>
+    <ul class = 'nav_list'>
+      
+      <div class = 'nav_list_item'>
+	  <form th:action="@{/departementModifier}"  th:object="${departement}" method="post">
+   <p>
+  <label>le numero de departement</label> : <input type="text"  th:field ="*{numDepartement}"  name="" required="" /><br/>
+     <label>le nombre de ses étages</label> : <input type="number"  th:field ="*{nombreEtage}" name="" required="" />
+   <button type="submit">Valider</button>
+    </p></form>
+      </div>
+    
+      
+	</ul>
+  </div>
+ </div>
+ </div>
+ </div>
+ 	    <div class="container">
+ 
+    
+<div class="popover" id="chercherDep">
+ <div class = 'content'>
+  <a href="#" class="close"></a>
+   <div class = 'nav'>
+    <ul class = 'nav_list'>
+      
+      <div class = 'nav_list_item'>
+	  <form method="post" action="fichier">
+   <p>
+ <label>le numero de departement</label> : <input type="text" name="pseudo" /><br/>
+     <label>le nombre de ses étages</label> : <input type="text" name="pseudo" />
+    </p></form>
+      </div>
+    
+      
+	</ul>
+  </div>
+ </div>
+ </div>
+ </div>
+ 	    <div class="container">
+ 
+    
+<div class="popover" id="ajouterChambre">
+ <div class = 'content'>
+  <a href="#" class="close"></a>
+   <div class = 'nav'>
+    <ul class = 'nav_list'>
+      
+      <div class = 'nav_list_item'>
+	  <form action="#" th:action="@{/ajoutChambre}"  th:object="${chambre}" method="post">
+    <p>
+ <label>le numero de chambre</label> : <input type="text"  th:field ="*{numChambre}"  name="" required="" /><br/>
+     <label>sa capacite</label> : <input type="number"  th:field ="*{capacite}" name="" required="" /><br/>
+     <label>le numero du l'etage'</label> : <input type="text"  th:field ="*{etage.numEtage}" name="" required="" />
+   <button type="submit">Valider</button>
+ 
+
+    </p></form>
+      </div>
+    
+      
+	</ul>
+  </div>
+ </div>
+ </div>
+ </div>
+ 	    <div class="container">
+ 
+    
+<div class="popover" id="ajouterEtage">
+ <div class = 'content'>
+  <a href="#" class="close"></a>
+   <div class = 'nav'>
+    <ul class = 'nav_list'>
+      
+      <div class = 'nav_list_item'>
+
+      	  <form action="#" th:action="@{/etageAjout}"  th:object="${etage}" method="post">
+   <p>
+ <label>le numero de l'etage</label> : <input type="text"  th:field ="*{numEtage}"  name="" required="" /><br/>
+     <label>le nombre de ses chambre</label> : <input type="number"  th:field ="*{capacite}" name="" required="" /><br/>
+     <label>le numero du departement</label> : <input type="text"  th:field ="*{Departement.numDepartement}" name="" required="" />
+   <button type="submit">Valider</button>
+    </p></form>
+      
+        
+   
+    
+	</ul>
+  </div>
+ </div>
+ </div>
+ </div>
+  	    <div class="container">
+ 
+    
+<div class="popover" id="supprimerEtage">
+ <div class = 'content'>
+  <a href="#" class="close"></a>
+   <div class = 'nav'>
+    <ul class = 'nav_list'>
+      
+      <div class = 'nav_list_item'>
+	  <form  action="#" th:action="@{/etagesupprimer}"  th:object="${etage}" method="post">
+   <p>
+ <label>le numero de l'etage'</label> : <input type="text"  th:field ="*{numEtage}"  name="" required="" /><br/>
+      <button type="submit">Valider</button> 
+    </p></form>
+      </div>
+    
+      
+	</ul>
+  </div>
+ </div>
+ </div>
+ </div>
+ 
+ 
+  </body>
+</html>

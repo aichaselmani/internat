@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>residant</title>
+ 	 <link rel="stylesheet" type="text/css" href="departement.css" />
+  </head>
+  <body>
+   
+     
+ <div class="container1">
+ 
+        <nav class="menu">
+            <ul class="main-menu">
+                <li class="active"><i class="fa fa-home"></i><a class="her" href="/adminRetour">retour</a></li>
+                <li class="with-submenu">
+                    <i class="fa fa-briefcase"></i><a  class="her" href="#ajouter">Ajouter&nbsp;&nbsp;&nbsp;</a><i class="fa fa-caret-down"></i>
+                  
+                </li>
+                <li class="with-submenu">
+                    <i class="fa fa-briefcase"></i><a class="her"  href="#supprimer">supprimer&nbsp;</a><i class="fa fa-caret-down"></i>
+                   
+                </li>
+                <li class="with-submenu">
+                    <i class="fa fa-briefcase"></i><a class="her" href="#modifier">modifier&nbsp;&nbsp;&nbsp;</a><i class="fa fa-caret-down"></i>
+              
+                </li>
+                 <li class="with-submenu">
+                    <i class="fa fa-briefcase"></i><a class="her" href="#affectuer">affectuer&nbsp;&nbsp;&nbsp;</a><i class="fa fa-caret-down"></i>
+              
+                </li>
+                 
+                <li class="with-submenu">
+                    <i class="fa fa-briefcase"></i>rechercher<i class="fa fa-caret-down"></i>
+                         <ul class="submenu">
+      
+                        <li><a href="#recherche1">résidant</a></li>
+                        <li><a  href="#recherche2">chambres</a></li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
+    </div>
+                <p  th:utext="${errorMessage}" style="color:red;font-style:italic;"></p>	 
+            <div class="container">
+<div class="popover" id="ajouter">
+ <div class = 'content'>
+  <a href="#" class="close"></a>
+   <div class = 'nav'>
+    <ul class = 'nav_list'>
+      
+      <div class = 'nav_list_item'>
+	  <form action="#" th:action="@{/ajouter}"  th:object="${Etudiant}" method="post">
+   <p>
+  <label>Nom</label> : <input type="text"  th:field ="*{eNom}"  name="" required="" /><br/>
+       <label>Prenom</label> : <input type="text"  th:field ="*{ePrenom}"  name="" required="" /><br/>
+      <label>CIN</label> : <input type="text"  th:field ="*{eCIN}"  name="" required="" /><br/>
+      <label>Email</label> : <input type="email"  th:field ="*{eMail}"  name="" required="" /><br/>
+      <label>passWord</label> : <input type="text"  th:field ="*{ePassWord}"  name="" required="" /><br/>
+      <label>Niveau</label> : <input type="text"  th:field ="*{eNiveau}"  name="" required="" placeholder="1 ,2 ou 3" /><br/>
+     <button type="submit">Valider</button>
+    </p></form>
+      </div>
+    
+      
+	</ul>
+  </div>
+ </div>
+ </div>
+ </div> 
+ 	    <div class="container">
+ 
+    
+<div class="popover" id="modifier">
+ <div class = 'content'>
+  <a href="#" class="close"></a>
+   <div class = 'nav'>
+    <ul class = 'nav_list'>
+      
+      <div> class = 'nav_list_item'>
+	
+     <form action="#" th:action="@{/modifier}"  th:object="${Etudiant}" method="post">
+   <p>
+      <label>CIN de residant</label> : <input type="text"  th:field ="*{eCIN}"  name="" required="" /><br/>
+      <h2>les donnees a modifier</h2>
+      <label>Email</label> : <input type="email"  th:field ="*{eMail}"  name="" required="" /><br/>
+      <label>passWord</label> : <input type="text"  th:field ="*{ePassWord}"  name="" required="" /><br/>
+      <label>Niveau</label> : <input type="text"  th:field ="*{eNiveau}"  name="" required="" placeholder="1 ,2 ou 3" /><br/>
+     <button type="submit">Valider</button>
+    </p></form></div>
+      
+	</ul>
+  </div>
+ </div>
+ </div>
+ </div>
+ 	    <div class="container">
+ 
+    
+<div class="popover" id="supprimer">
+ <div class = 'content'>
+  <a href="#" class="close"></a>
+   <div class = 'nav'>
+    <ul class = 'nav_list'>
+      
+      <div class = 'nav_list_item'>
+	     <form action="#" th:action="@{/supprimer}"  th:object="${Etudiant}" method="post">
+   <p>
+      <label>CIN de residant</label> : <input type="text"  th:field ="*{eCIN}"  name="" required="" /><br/>
+ 
+     <button type="submit">Valider</button>
+
+      </div>
+    
+      
+	</ul>
+  </div>
+ </div>
+ </div>
+ </div>
+ 	    <div class="container">
+ 
+    
+<div class="popover" id="affectuer">
+ <div class = 'content'>
+  <a href="#" class="close"></a>
+   <div class = 'nav'>
+    <ul class = 'nav_list'>
+      
+      <div class = 'nav_list_item'>
+	  <form action="#" th:action="@{/affectuer}"  th:object="${EtudiantChambre}" method="post">
+   <p>
+ <label>le CIN de residant</label> : <input  type="text"  th:field ="*{etudiant.eCIN}"  name="" required=""  /><br/>
+     <label>le numero de la chambre</label> : <input  type="text"  th:field ="*{chambre.numChambre}"  name="" required=""  />
+    </p></form>
+      </div>
+    
+      
+	</ul>
+  </div>
+ </div>
+ </div>
+ </div>
+	    <div class="container">
+ 
+    
+<div class="popover" id="recherche1">
+ <div class = 'content'>
+  <a href="#" class="close"></a>
+   <div class = 'nav'>
+    <ul class = 'nav_list'>
+      
+      <div class = 'nav_list_item'>
+	  <form action="#" th:action="@{/rechercher1}"  th:object="${Etudiant}" method="post">
+   <p>
+ <label>le CIN de residant</label> : <input  type="text"  th:field ="*{eCIN}"  name="" required=""  /><br/>
+
+    </p></form>
+      </div>
+    
+      
+	</ul>
+  </div>
+ </div>
+ </div>
+ </div>
+  
+  <div class="container">
+ 
+    
+<div class="popover" id="recherche2">
+ <div class = 'content'>
+  <a href="#" class="close"></a>
+   <div class = 'nav'>
+    <ul class = 'nav_list'>
+      
+      <div class = 'nav_list_item'>
+	  <form action="#" th:action="@{/rechercher2}"  th:object="${Etudiant}" method="post">
+   <p>
+ <label>le CIN de residant</label> : <input  type="text"  th:field ="*{eCIN}"  name="" required=""  /><br/>
+
+    </p></form>
+      </div>
+    
+      
+	</ul>
+  </div>
+ </div>
+ </div>
+ </div>
+ 
+ 
+ 
+
+  </body>
+</html>
